@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion "21.1.1"
+    compileSdkVersion 15
+    buildToolsVersion "20"
 
     defaultConfig {
         applicationId "org.openalpr.app"
-        minSdkVersion 19
-        targetSdkVersion 21
+        minSdkVersion 15
+        targetSdkVersion 15
         versionCode 1
         versionName "1.0"
     }

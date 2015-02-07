@@ -317,8 +317,8 @@ public class MainActivity extends Activity implements AsyncListener<AlprResult> 
         this.plate.setText(plate);
     }
 
-    public void setProcessingTime(long processingTime){
-        this.processingTime.setText(String.format("%d %s", processingTime, "ms"));
+    public void setProcessingTime(long processingTime, double confidence){
+        this.processingTime.setText(String.format("%d %s ... %f", processingTime, "ms", confidence));
     }
 
     private void setErrorText(String text) {
@@ -349,7 +349,7 @@ public class MainActivity extends Activity implements AsyncListener<AlprResult> 
             if (resultItems.size() > 0) {
                 AlprResultItem resultItem = resultItems.get(0);
                 setPlate(resultItem.getPlate());
-                setProcessingTime(alprResult.getProcessingTime());
+                setProcessingTime(alprResult.getProcessingTime(), resultItem.getConfidence());
             }
             cleanUp();
         }else {

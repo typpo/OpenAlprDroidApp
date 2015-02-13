@@ -318,7 +318,7 @@ public class MainActivity extends Activity implements AsyncListener<AlprResult> 
     }
 
     public void setProcessingTime(long processingTime, double confidence){
-        this.processingTime.setText(String.format("%d %s ... %f", processingTime, "ms", confidence));
+        this.processingTime.setText(String.format("%d %s ... % ", processingTime, "ms", confidence));
     }
 
     private void setErrorText(String text) {
